@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azure Blob List</title>
+    <!-- Google Font: Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Bootstrap Latest Version -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="container mt-4">
+    <div class="pageHeader">
+      <h1 class="text-center">List blobs in Azure File Storage</h1>
+      <small class="d-block text-center">This sample demonstrates the use of Azure Managed Identities to list all blobs from Azure File Storage.</small>
+    </div>
+    <div class="pageContents">
+      <h1 class="text-primary mb-4 text-center">Blobs in Container: <%= process.env.STORAGE_CONTAINER_NAME %></h1>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Blob Name</th>
+            <th scope="col">Created On</th>
+            <th scope="col">Last Modified</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% blobs.forEach(blob => { %>
+          <tr>
+            <td><%= blob.name %></td>
+            <td><%= new Date(blob.createdOn).toLocaleString() %></td>
+            <td><%= new Date(blob.lastModified).toLocaleString() %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Optional Bootstrap JavaScript Bundle -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

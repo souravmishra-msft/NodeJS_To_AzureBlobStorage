@@ -1,0 +1,79 @@
+/* Apply the Nunito font globally */
+body {
+  width: 100%;
+  height: 80vh;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light background color */
+  color: #333; /* Dark text color */
+}
+
+.pageHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #646464;
+}
+
+.pageHeader h1 {
+  font-size: 2rem;
+  color: #b4b4b4;
+  margin-bottom: 10px;
+}
+
+.pageHeader small {
+  font-size: 0.8rem;
+  color: #b4b4b4;
+}
+
+.pageContents {
+  padding: 10px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Styling for the heading */
+h1 {
+  color: #646464; /* Bootstrap primary color */
+  margin-bottom: 20px;
+}
+
+/* Styling for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table header background color */
+thead.table-dark {
+  background-color: #000; /* Black background for the header */
+  color: #fff; /* White text in the header */
+}
+
+/* Custom style for table rows */
+table td,
+table th {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+  background-color: #f1f1f1; /* Light hover effect for rows */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
